@@ -16,6 +16,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+app.get("/", (req, res) => {
+  res.send("Connected with server");
+});
+
 app.use("/api/auth", authRoutes);
 
 app.use((err, req, res, next) => {
